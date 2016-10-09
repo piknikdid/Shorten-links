@@ -1,0 +1,17 @@
+{
+  "name": "shorter",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "N&K"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/piknikdid/Shorten-links",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
