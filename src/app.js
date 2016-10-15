@@ -29,12 +29,14 @@
          * Add click event to submit button
          */
         this.registerLinkEvent = function () {
+            var self = this;
             var callback = function (el) {
                 var link = new Link(el);
                 var result = false;
                 var errorMessage;
                 if (link.validate()) {
-                    result = link.submit(this.getSubmitUrl()); //Be careful with this inside callback
+                    result = link.submit(self.getSubmitUrl());
+                    console.log('aaa');//Be careful with this inside callback
                     if (!result) {
                         errorMessage = "Unable to submit";
                     }
@@ -43,12 +45,17 @@
                 }
 
                 if (result) {
-                    this.showNewLink(result); //Be careful with this inside callback
+                    self.showNewLink(result); //Be careful with this inside callback
                 } else {
-                    this.showError(errorMessage); //Be careful with this inside callback
+                    self.showError(errorMessage); //Be careful with this inside callback
                 }
             };
 
+            var el = document.getElementById('cutter');
+            var buttonApp = document.getElementById('buttonApp')
+            buttonApp.onclick = function() {
+                callback(el);
+            };
             //TODO: Add callback to click event of submit button
         };
     };
@@ -66,6 +73,13 @@
          * @return bool
          */
         this.validate = function () {
+            
+           if(this.linkElement.value){
+               return true;
+           }
+            else{
+                return false;
+            }
             //TODO
         };
 
