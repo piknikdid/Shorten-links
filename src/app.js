@@ -14,7 +14,7 @@
          * @param link
          */
         this.showNewLink = function (link) {
-            //TODO
+           alert('habrahabra');
         };
 
         /**
@@ -35,8 +35,8 @@
                 var result = false;
                 var errorMessage;
                 if (link.validate()) {
-                    result = link.submit(self.getSubmitUrl());
-                    console.log('aaa');//Be careful with this inside callback
+                    ;
+                    result = link.submit(self.getSubmitUrl());//Be careful with this inside callback
                     if (!result) {
                         errorMessage = "Unable to submit";
                     }
@@ -45,6 +45,7 @@
                 }
 
                 if (result) {
+                   
                     self.showNewLink(result); //Be careful with this inside callback
                 } else {
                     self.showError(errorMessage); //Be careful with this inside callback
