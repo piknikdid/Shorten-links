@@ -6,7 +6,8 @@
          * @param errorMessage
          */
         this.showError = function (errorMessage) {
-            //TODO
+            //TODO: Create new div element on top of our input, add some css styles (red border, red text color) to make more like error message
+            //and insert errorMessage text in there.
         };
 
         /**
@@ -14,14 +15,14 @@
          * @param link
          */
         this.showNewLink = function (link) {
-            //TODO
+            //TODO: Create new div element below input field, and insert link text inside.
         };
 
         /**
          * Returns submit url
          */
         this.getSubmitUrl = function () {
-            //TODO
+            //TODO: Will just return URL to which you will submit your form (http://localhost:8089 for dev enviroment)
             return;
         };
 
@@ -36,7 +37,6 @@
                 var errorMessage;
                 if (link.validate()) {
                     result = link.submit(self.getSubmitUrl());
-                    console.log('aaa');//Be careful with this inside callback
                     if (!result) {
                         errorMessage = "Unable to submit";
                     }
@@ -45,9 +45,9 @@
                 }
 
                 if (result) {
-                    self.showNewLink(result); //Be careful with this inside callback
+                    self.showNewLink(result);
                 } else {
-                    self.showError(errorMessage); //Be careful with this inside callback
+                    self.showError(errorMessage);
                 }
             };
 
@@ -56,7 +56,6 @@
             buttonApp.onclick = function() {
                 callback(el);
             };
-            //TODO: Add callback to click event of submit button
         };
     };
 
@@ -73,14 +72,12 @@
          * @return bool
          */
         this.validate = function () {
-            
+           //TODO: Add more validations, check if value is correct URL  
            if(this.linkElement.value){
                return true;
-           }
-            else{
+           } else {
                 return false;
-            }
-            //TODO
+           }
         };
 
         /**
@@ -91,7 +88,7 @@
          * @return string|bool
          */
         this.submit = function (submitUrl) {
-            //TODO
+            //TODO: You can use jQuery.post() to make AJAX call to the server, then you need to receive some response, verify if it's valid and return shorten URL.
         };
 
         this.init();
