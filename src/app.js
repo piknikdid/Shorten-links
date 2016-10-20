@@ -7,8 +7,8 @@
          */
         this.showError = function (errorMessage) {
             var divErr = document.createElement('div');
-            div.style.borderColor: "red";
-            div.style.color: "red";
+            div.innerHTML = errorMessage;
+            div.className = "bg-danger";
             document.body.appendChild(div);
             //TODO: Create new div element on top of our input, add some css styles (red border, red text color) to make more like error message
             //and insert errorMessage text in there.
@@ -20,8 +20,11 @@
          */
         this.showNewLink = function (link) {
            var div = document.createElement('div');
-            div.style.borderColor: "red";
-            document.body.appendChild(div);
+            var childEl = document.getElementById('cutter');
+            var parrentEL = childEl.parentNode; 
+            parrentEL.insertBefore(div, childEl);
+            div.className = "container";
+            div.innerHTML = link;
 
             //TODO: Create new div element below input field, and insert link text inside.
         };
