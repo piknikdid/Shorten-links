@@ -7,8 +7,8 @@
          */
         this.showError = function (errorMessage) {
             var divErr = document.createElement('div');
-            div.innerHTML = errorMessage;
-            div.className = "bg-danger";
+            divErr.innerHTML = errorMessage;
+            divErr.className = "bg-danger";
             document.body.appendChild(div);
             //TODO: Create new div element on top of our input, add some css styles (red border, red text color) to make more like error message
             //and insert errorMessage text in there.
@@ -113,7 +113,7 @@
         };
 
         this.init();
-    };
+    
 
     var app = new App();
     app.registerLinkEvent();
