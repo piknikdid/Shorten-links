@@ -23,7 +23,7 @@
             var childEl = document.getElementById('cutter');
             var parrentEL = childEl.parentNode; 
             parrentEL.insertBefore(div, childEl);
-            div.className = "container";
+            div.className = "container newLink";
             div.innerHTML = link;
 
             //TODO: Create new div element below input field, and insert link text inside.
@@ -33,8 +33,8 @@
          * Returns submit url
          */
         this.getSubmitUrl = function () {
-            //TODO: Will just return URL to which you will submit your form (http://localhost:8089 for dev enviroment)
-            return ;
+            var urlsub = "http://localhost:1337" //TODO: Will just return URL to which you will submit your form (http://localhost:8089 for dev enviroment)
+            return urlsub ;
         };
 
         /**
@@ -92,7 +92,14 @@
                 return false;
            }
         };
-
+        $("#incontainer").submit(function(){
+                    
+        $.ajax({
+                type:"post",
+                url:"express.js",
+                data:$(this).serialize()
+            })
+        })
         /**
          * Send ajax post request
          * return new link on success, false on error
@@ -101,6 +108,7 @@
          * @return string|bool
          */
         this.submit = function (submitUrl) {
+        }
             //TODO: You can use jQuery.post() to make AJAX call to the server, then you need to receive some response, verify if it's valid and return shorten URL.
         };
 
