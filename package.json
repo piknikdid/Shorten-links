@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/piknikdid/Shorten-links/issues"
   },
-  "homepage": "https://github.com/piknikdid/Shorten-links#readme"
+  "homepage": "https://github.com/piknikdid/Shorten-links#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
 }

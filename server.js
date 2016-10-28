@@ -5,14 +5,10 @@ var app = express();
 
 app.use(express.static(path.join(__dirname))); // запуск статического файлового сервера, который смотрит на папку shorter/ (в нашем случае отдает index.html)
 
-app.post('/api/link', function(req, res) {
-    /*console.log(req);*/
-    
+app.post('/api/link', function(req, res) {   
     res.send('{"shortLink":"http://google.com"}');
 });
 
 app.listen(1337, function(){
     console.log('Express server listening on port 1337');
-    
-
 });
