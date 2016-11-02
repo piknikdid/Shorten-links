@@ -9,7 +9,7 @@
             var divErr = document.createElement('div');
             divErr.innerHTML = errorMessage;
             divErr.className = "bg-danger";
-            document.body.appendChild(div);
+            document.body.appendChild(divErr);
         };
 
         /**
@@ -22,14 +22,17 @@
             var parrentEL = childEl.parentNode; 
             parrentEL.insertBefore(div, childEl);
             div.className = "container newLink";
-            div.innerHTML = link;
+            var newLink = JSON.parse(link);
+            div.innerHTML = newLink.shortLink;
         };
 
         /**
          * Returns submit url
          */
         this.getSubmitUrl = function () {
-            return "http://localhost:1337/api/link";
+            return window.location + "api/link";
+            
+            
         };
 
         /**
