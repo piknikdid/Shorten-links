@@ -1,7 +1,7 @@
 var rand = [];
 var j = 0 ;
 var i;
-var getLinkId = function (length) {
+function getLinkId (length) {
     for(i= 65; i<= 65+24; i++) {
         rand[j++] = String.fromCharCode(i);                    
     }
@@ -20,7 +20,6 @@ var getLinkId = function (length) {
     for (i = 0; i<= lengthURL; i++) {
         randNum[i] = rand[Math.floor(Math.random()*rand.length)];
     }
-    var nameId = randNum.join("");
-            return nameId;
+    this.nameId = randNum.join("");
     };
     exports.getLinkId = getLinkId;
