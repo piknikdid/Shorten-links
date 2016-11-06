@@ -3,7 +3,7 @@ var path            = require('path'); // модуль для парсинга �
 var app = express();
 var fs = require("fs");
 var getID = require('./getID.js');
-var appl = require('./src/app.js');
+
 
 
 app.use(express.static(path.join(__dirname))); // запуск статического файлового сервера, который смотрит на папку shorter/ (в нашем случае отдает index.html)
