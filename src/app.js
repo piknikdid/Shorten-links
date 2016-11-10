@@ -113,5 +113,4 @@
 
     var app = new App();
     app.registerLinkEvent();
-    exports.Link = Link;
-})();
+    })();
