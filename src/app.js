@@ -17,13 +17,16 @@
          * @param link
          */
         this.showNewLink = function (link) {
-           var div = document.createElement('div');
-            var childEl = document.getElementById('cutter');
-            var parrentEL = childEl.parentNode; 
-            parrentEL.insertBefore(div, childEl);
-            div.className = "container newLink";
+            var div = document.createElement('div');
+            var e = document.createElement('a');
             var newLink = JSON.parse(link);
-            div.innerHTML = newLink.shortLink;
+            var childEl = document.getElementById('incontainer');
+            div.className = "container newLink";
+            childEl.appendChild(div);
+            e.href = newLink.shortLink;
+            e.style.color = 'red';
+            e.appendChild(document.createTextNode(newLink.shortLink));
+            div.appendChild(e);
         };
 
         /**
@@ -74,7 +77,6 @@
         this.linkElement = el;
 
         this.init = function () {
-            //TODO: Init link element
         };
 
         /**
@@ -110,7 +112,6 @@
 
         this.init();
     }
-
     var app = new App();
     app.registerLinkEvent();
     })();
