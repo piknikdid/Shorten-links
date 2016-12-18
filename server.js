@@ -7,8 +7,11 @@ var linkId = require('./lib/GetLink.js');
 var fileExists = require('./lib/index.js');
 
 app.use(express.static(path.join(__dirname))); // запуск статического файлового сервера, который смотрит на папку shorter/ (в нашем случае отдает index.html)
-app.use(bodyParser.json()); // for parsing application/json
-app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+
+app.use( bodyParser.json() );       // to support JSON-encoded bodies
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+  extended: true
+}));
 
 app.post('/api/link', function(req, res) {
     var link = req.body.link;
@@ -45,8 +48,7 @@ fs.readFile('data/'+ getUrl, function(err, data) {
           res.redirect(redirectLink);
         }
         else {
-          console.log("Ссылка неверна");
-          
+          console.log("Неверный логин");
         }
     }
 
